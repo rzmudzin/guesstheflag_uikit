@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SJH-IK-gK3">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDN-Lv-9Lg">
+                                <rect key="frame" x="114" y="124" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdk-WS-mli"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ad5-ft-jdL">
+                                <rect key="frame" x="114" y="254" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XcI-ZP-yMx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9A-sJ-FIC">
+                                <rect key="frame" x="114" y="384" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VN0-Or-TuQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BZm-FK-ZBl"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KDN-Lv-9Lg" firstAttribute="top" secondItem="BZm-FK-ZBl" secondAttribute="top" constant="80" id="Qgp-ln-Krq"/>
+                            <constraint firstItem="G9A-sJ-FIC" firstAttribute="centerX" secondItem="BZm-FK-ZBl" secondAttribute="centerX" id="UB5-Qx-Z1E"/>
+                            <constraint firstItem="ad5-ft-jdL" firstAttribute="centerX" secondItem="BZm-FK-ZBl" secondAttribute="centerX" id="UIn-wq-eQY"/>
+                            <constraint firstItem="ad5-ft-jdL" firstAttribute="top" secondItem="KDN-Lv-9Lg" secondAttribute="bottom" constant="30" id="XeY-ms-QKH"/>
+                            <constraint firstItem="G9A-sJ-FIC" firstAttribute="top" secondItem="ad5-ft-jdL" secondAttribute="bottom" constant="30" id="g4a-LT-tyM"/>
+                            <constraint firstItem="KDN-Lv-9Lg" firstAttribute="centerX" secondItem="BZm-FK-ZBl" secondAttribute="centerX" id="kqZ-c7-ff4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cMU-OS-DtR"/>
+                    <connections>
+                        <outlet property="button1" destination="KDN-Lv-9Lg" id="86C-9X-cyz"/>
+                        <outlet property="button2" destination="ad5-ft-jdL" id="Ead-Ds-Wb1"/>
+                        <outlet property="button3" destination="G9A-sJ-FIC" id="hQn-Ul-kRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-559"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3AZ-2b-vkQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJH-IK-gK3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x4g-h4-yEh">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b6h-lv-Dpw" kind="relationship" relationship="rootViewController" id="heV-Kv-oGj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDx-cL-ubf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.80000000000001" y="-559.07046476761627"/>
+        </scene>
+        <!--Flag View Controller-->
+        <scene sceneID="r8Q-SQ-dZM">
+            <objects>
+                <viewController id="b6h-lv-Dpw" customClass="FlagViewController" customModule="GuessTheFlag" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvo-00-XWG">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dii-Rp-5dh">
+                                <rect key="frame" x="114" y="124" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dii-Rp-5dh" secondAttribute="height" multiplier="2:1" id="97d-zg-g9d"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="onFlagTap:" destination="b6h-lv-Dpw" eventType="touchUpInside" id="hEN-KX-IlR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-Tr-Kdk">
+                                <rect key="frame" x="114" y="254" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hkH-Tr-Kdk" secondAttribute="height" multiplier="2:1" id="RQT-21-TUd"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="onFlagTap:" destination="b6h-lv-Dpw" eventType="touchUpInside" id="HLn-eZ-Cuf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59t-41-Swx">
+                                <rect key="frame" x="114" y="384" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="59t-41-Swx" secondAttribute="height" multiplier="2:1" id="e6n-tr-csP"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="onFlagTap:" destination="b6h-lv-Dpw" eventType="touchUpInside" id="gqh-Od-4eP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RCi-ag-8YJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hkH-Tr-Kdk" firstAttribute="top" secondItem="Dii-Rp-5dh" secondAttribute="bottom" constant="30" id="8Me-Rk-XIp"/>
+                            <constraint firstItem="hkH-Tr-Kdk" firstAttribute="centerX" secondItem="Dii-Rp-5dh" secondAttribute="centerX" id="9zn-6g-cdS"/>
+                            <constraint firstItem="hkH-Tr-Kdk" firstAttribute="height" secondItem="Dii-Rp-5dh" secondAttribute="height" id="C11-E9-ruB"/>
+                            <constraint firstItem="59t-41-Swx" firstAttribute="height" secondItem="hkH-Tr-Kdk" secondAttribute="height" id="KRU-cN-8Iz"/>
+                            <constraint firstItem="Dii-Rp-5dh" firstAttribute="top" secondItem="RCi-ag-8YJ" secondAttribute="top" constant="36" id="Pmz-JO-SoM"/>
+                            <constraint firstItem="Dii-Rp-5dh" firstAttribute="centerX" secondItem="RCi-ag-8YJ" secondAttribute="centerX" id="QYH-qi-vqs"/>
+                            <constraint firstItem="RCi-ag-8YJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="59t-41-Swx" secondAttribute="bottom" constant="20" id="m3L-CN-4jh"/>
+                            <constraint firstItem="59t-41-Swx" firstAttribute="top" secondItem="hkH-Tr-Kdk" secondAttribute="bottom" constant="30" id="yda-Bw-ga1"/>
+                            <constraint firstItem="59t-41-Swx" firstAttribute="centerX" secondItem="hkH-Tr-Kdk" secondAttribute="centerX" id="zH0-lU-4s8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WNq-jA-Y4C"/>
+                    <connections>
+                        <outlet property="button1" destination="Dii-Rp-5dh" id="Iau-gz-bnl"/>
+                        <outlet property="button2" destination="hkH-Tr-Kdk" id="ijA-jY-9FH"/>
+                        <outlet property="button3" destination="59t-41-Swx" id="084-40-46L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEJ-p8-Ogb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="-559"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="us" width="200" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
