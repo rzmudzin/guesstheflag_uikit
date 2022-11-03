@@ -31,4 +31,4 @@ jobs:
         echo "Hello ${{ github.event.inputs.name }}"
         echo "Echoing Secret..."
         echo "Secret: $SIMPLE_SECRET"
-        exit 0
+        exit 1
