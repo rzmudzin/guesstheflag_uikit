@@ -43,3 +43,7 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         #exit 1
+
+    - name: Deploy with rsync
+      run: ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
+      
