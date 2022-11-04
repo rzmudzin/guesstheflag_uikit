@@ -8,7 +8,61 @@
 import UIKit
 
 class FlagViewController: UIViewController {
+//    let prefix = "SF_"
+    let prefix = ""
 	var countries = ["estonia", "france", "germany", "ireland", "italy", "nigeria", "poland", "russia", "spain", "uk", "us"]
+    var states = [
+        "Alabama":    "Montgomery",
+        "Montana":    "Helena",
+        "Alaska":    "Juneau",
+        "Nebraska":    "Lincoln",
+        "Arizona":    "Phoenix",
+        "Nevada":    "Carson City",
+        "Arkansas":    "Little Rock",
+        "New Hampshire":    "Concord",
+        "California":    "Sacramento",
+        "New Jersey":    "Trenton",
+        "Colorado":    "Denver",
+        "New Mexico":    "Santa Fe",
+        "Connecticut":    "Hartford",
+        "New York":    "Albany",
+        "Delaware":    "Dover",
+        "North Carolina":    "Raleigh",
+        "Florida":    "Tallahassee",
+        "North Dakota":    "Bismarck",
+        "Georgia":    "Atlanta",
+        "Ohio":    "Columbus",
+        "Hawaii":    "Honolulu",
+        "Oklahoma":    "Oklahoma City",
+        "Idaho":    "Boise",
+        "Oregon":    "Salem",
+        "Illinois":    "Springfield",
+        "Pennsylvania":    "Harrisburg",
+        "Indiana":    "Indianapolis",
+        "Rhode Island":    "Providence",
+        "Iowa":    "Des Moines",
+        "South Carolina":    "Columbia",
+        "Kansas":    "Topeka",
+        "South Dakota":    "Pierre",
+        "Kentucky":    "Frankfort",
+        "Tennessee":    "Nashville",
+        "Louisiana":   "Baton Rouge",
+        "Texas":    "Austin",
+        "Maine":    "Augusta",
+        "Utah":    "Salt Lake City",
+        "Maryland":    "Annapolis",
+        "Vermont":    "Montpelier",
+        "Massachusetts":    "Boston",
+        "Virginia":    "Richmond",
+        "Michigan":    "Lansing",
+        "Washington":    "Olympia",
+        "Minnesota":    "St. Paul",
+        "West Virginia":    "Charleston",
+        "Mississippi":    "Jackson",
+        "Wisconsin":    "Madison",
+        "Missouri":    "Jefferson City",
+        "Wyoming":    "Cheyenne"
+    ]
 	var maxQuestions = 5
 	var questionsAsked = 0
 	var answeredCorrectly = 0
@@ -46,6 +100,16 @@ class FlagViewController: UIViewController {
 		button1.layer.borderColor = UIColor.lightGray.cgColor
 		button2.layer.borderColor = UIColor.lightGray.cgColor
 		button3.layer.borderColor = UIColor.lightGray.cgColor
+        
+//        let flagOneLabel = UILabel()
+//        flagOneLabel.text = "Test"
+//        flagOneLabel.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(flagOneLabel)
+//        NSLayoutConstraint.activate([
+//            flagOneLabel.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 5),
+//            flagOneLabel.centerXAnchor.constraint(equalTo: button1.centerXAnchor)
+//        ])
+        
 		
 		let navbarButton = UIBarButtonItem(title: "New Game", style: .plain, target: self, action: #selector(newGame))
 		navigationItem.rightBarButtonItem = navbarButton
@@ -84,9 +148,9 @@ class FlagViewController: UIViewController {
 	//		var countryName = countries[correctAnswer]
 	//		countryName = countryName.prefix(1).uppercased() + countryName.dropFirst()
 			title = countries[correctAnswer].uppercased()
-			button1.setImage(UIImage(named: countries[0]), for: .normal)
-			button2.setImage(UIImage(named: countries[1]), for: .normal)
-			button3.setImage(UIImage(named: countries[2]), for: .normal)
+			button1.setImage(UIImage(named: "\(prefix)\(countries[0])"), for: .normal)
+			button2.setImage(UIImage(named: "\(prefix)\(countries[1])"), for: .normal)
+			button3.setImage(UIImage(named: "\(prefix)\(countries[2])"), for: .normal)
 		}
 	}
 
