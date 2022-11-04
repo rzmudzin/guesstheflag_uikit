@@ -30,6 +30,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Initialize Environment
       run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo $GITHUB_HEAD_REF
+        echo $GITHUB_BASE_REF
         CI_COMMIT_REF_NAME="Test123"
         bash --version
         echo "Hello ${{ github.event.inputs.name }}"
