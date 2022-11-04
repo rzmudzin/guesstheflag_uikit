@@ -45,7 +45,7 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         echo "Start"
-        pwdstr=${{ secrets.SIMPLE_SECRET }}
+        #pwdstr=${{ secrets.SIMPLE_SECRET }}
         #pwdlen=${#pwdstr}
         #echo "PWD Len: $pwdlen"
         #echo $(P12password) | cut -c1-4
