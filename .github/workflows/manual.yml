@@ -45,7 +45,7 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         echo "Start"
-        testValue="Test Data"
+        #testValue="Test Data"
         pwdstr=$(secrets.SIMPLE_SECRET)
         #echo "Test Data: $testValue"
         #echo "pwdstr: $pwdstr"
