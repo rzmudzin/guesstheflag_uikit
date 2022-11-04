@@ -30,6 +30,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
+        CI_COMMIT_REF_NAME="Test123"
         bash --version
         echo "Hello ${{ github.event.inputs.name }}"
         echo "Echoing Secret..."
@@ -44,6 +45,10 @@ jobs:
         echo $pwdstr | cut -c1-1
         echo $pwdstr | cut -c2-$((pwdlen-0))
         echo "End"
+        BUILD_JSON=$(jq -c -n \
+          --arg CI_COMMIT_REF_NAME "$CI_COMMIT_REF_NAME" \
+          '{"resources": { "repositories": { "self": { "refName": $CI_COMMIT_REF_NAME } }}}')
+        echo $BUILD_JSON
         #exit 1
         
     - name: Install SSH Key
