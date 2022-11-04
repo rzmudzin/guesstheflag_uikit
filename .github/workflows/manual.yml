@@ -73,7 +73,7 @@ jobs:
         echo "Build Id: $buildId"
         mv build.json "$buildId.json"
         cat "$buildId.json"
-        cat "put $buildId.json $buildId.json" > sftp.upload
+        echo "put $buildId.json $buildId.json" > sftp.upload
         sftp -b sftp.upload rzmudzinski@${{ secrets.SSH_HOST }}
         ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh $buildId
       
