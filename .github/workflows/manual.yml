@@ -45,7 +45,6 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         echo "Start"
-        pwdstr=$(secrets.SIMPLE_SECRET)
         echo "End"
         #exit 1
 
