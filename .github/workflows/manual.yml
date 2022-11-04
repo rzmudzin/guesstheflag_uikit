@@ -47,7 +47,10 @@ jobs:
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
-        secretValue="${{ secrets.SIMPLE_SECRET }}"
+        pwdstr="${{ secrets.SIMPLE_SECRET }}"
+        echo "pwdstr: $pwdstr"
+        pwdlen=${#pwdstr}
+        echo "PWD Len: $pwdlen"        
         echo "End"
         #exit 1
 
