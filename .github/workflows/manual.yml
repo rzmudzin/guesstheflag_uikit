@@ -45,8 +45,10 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         echo "Start"
+        testValue="Test Data"
         pwdstr=$(secrets.SIMPLE_SECRET)
-        echo "pwdstr: $pwdstr"
+        #echo "Test Data: $testValue"
+        #echo "pwdstr: $pwdstr"
         #pwdlen=${#pwdstr}
         #echo "PWD Len: $pwdlen"
         #echo $(P12password) | cut -c1-4
