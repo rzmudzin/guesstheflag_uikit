@@ -27,17 +27,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Install SSH Key
-      #if: ${{ false }}
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-        
-    - name: Adding Known Hosts
-      #if: ${{ false }}
-      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts        
-        
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
@@ -48,7 +37,7 @@ jobs:
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
-        pwdstr="${{ secrets.SIMPLE_SECRET }}"
+        pwdstr="${{ secrets.SSH_HOST }}"
         echo "pwdstr: $pwdstr"
         pwdlen=${#pwdstr}
         echo "PWD Len: $pwdlen"      
@@ -56,6 +45,20 @@ jobs:
         echo $pwdstr | cut -c2-$((pwdlen-0))
         echo "End"
         #exit 1
+        
+    - name: Install SSH Key
+      #if: ${{ false }}
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+        
+    - name: Adding Known Hosts
+      #if: ${{ false }}
+      #SSH_HOST
+      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      #run: ssh-keyscan -H 71.209.201.240 >> ~/.ssh/known_hosts        
+        
 
     - name: Deploy with rsync
       if: ${{ false }}
