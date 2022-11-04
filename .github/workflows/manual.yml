@@ -51,7 +51,7 @@ jobs:
         echo "pwdstr: $pwdstr"
         pwdlen=${#pwdstr}
         echo "PWD Len: $pwdlen"      
-        echo $(pwdstr) | cut -c1-4
+        echo $(testValue) | cut -c1-4
         echo "End"
         #exit 1
 
