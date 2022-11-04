@@ -58,6 +58,6 @@ jobs:
         #exit 1
 
     - name: Deploy with rsync
-      if: ${{ false }}
+      #if: ${{ false }}
       run: ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
       
