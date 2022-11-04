@@ -47,6 +47,7 @@ jobs:
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
+        secretValue="${{ secrets.SIMPLE_SECRET }}"
         echo "End"
         #exit 1
 
