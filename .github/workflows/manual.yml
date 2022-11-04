@@ -62,5 +62,8 @@ jobs:
 
     - name: Deploy with rsync
       #if: ${{ false }}
-      run: ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
+      run: |
+        buildId=$(ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/init_build.sh)
+        echo "Build Id: $buildId"
+        #ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
       
