@@ -49,6 +49,7 @@ jobs:
           --arg CI_COMMIT_REF_NAME "$CI_COMMIT_REF_NAME" \
           '{"resources": { "repositories": { "self": { "refName": $CI_COMMIT_REF_NAME } }}}')
         echo $BUILD_JSON
+        echo $BUILD_JSON >> build.json
         #exit 1
         
     - name: Install SSH Key
@@ -70,5 +71,7 @@ jobs:
       run: |
         buildId=$(ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/init_build.sh)
         echo "Build Id: $buildId"
+        mv build.json "$(buildId).txt"
+        cat "$(buildId).txt"
         #ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
       
