@@ -46,9 +46,9 @@ jobs:
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         echo "Start"
         pwdstr=${{ secrets.SIMPLE_SECRET }}
-        pwdlen=${#pwdstr}
-        echo "PWD Len: $pwdlen"
-        echo $(P12password) | cut -c1-4
+        #pwdlen=${#pwdstr}
+        #echo "PWD Len: $pwdlen"
+        #echo $(P12password) | cut -c1-4
         echo "End"
         #exit 1
 
