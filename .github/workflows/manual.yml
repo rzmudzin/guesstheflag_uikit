@@ -71,7 +71,9 @@ jobs:
       run: |
         buildId=$(ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/init_build.sh)
         echo "Build Id: $buildId"
-        mv build.json "$(buildId).txt"
-        cat "$(buildId).txt"
-        #ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh
+        mv build.json "$buildId.json"
+        cat "$buildId.json"
+        cat "put $buildId.json $buildId.json" > sftp.upload
+        sftp -b sftp.upload rzmudzinski@${{ secrets.SSH_HOST }}
+        ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh $buildId
       
