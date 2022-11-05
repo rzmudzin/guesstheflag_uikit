@@ -14,7 +14,7 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Enter Id'
+        description: 'Description'
         # Default value if no value is explicitly provided
         default: 'xxxx'
         # Input has to be provided for the workflow to run
@@ -37,6 +37,10 @@ jobs:
         echo $GITHUB_BASE_REF
         echo $GITHUB_REF
         echo ${GITHUB_REF##*/}
+        echo ${{ github.head_ref }}
+        echo ${{ github.repositoryUrl }}
+        echo ${{ github.base_ref }}
+        echo ${{ github.head_ref }}
         CI_COMMIT_REF_NAME="Test123"
         bash --version
         echo "Hello ${{ github.event.inputs.name }}"
