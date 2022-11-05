@@ -1,0 +1,85 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+  
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:   
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]  
+  workflow_dispatch:  
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Enter Id'
+        # Default value if no value is explicitly provided
+        default: 'xxxx'
+        # Input has to be provided for the workflow to run
+        required: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Workflow steps
+  build:
+    # The type of runner that the job will run on (ubuntu-latest, macos-latest, etc)
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Initialize Environment
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo $GITHUB_HEAD_REF
+        echo $GITHUB_BASE_REF
+        echo $GITHUB_REF
+        CI_COMMIT_REF_NAME="Test123"
+        bash --version
+        echo "Hello ${{ github.event.inputs.name }}"
+        echo "Echoing Secret..."
+        echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
+        echo "Start"
+        testValue="Test Data"
+        echo "Test Data: $testValue"        
+        pwdstr="${{ secrets.SSH_HOST }}"
+        echo "pwdstr: $pwdstr"
+        pwdlen=${#pwdstr}
+        echo "PWD Len: $pwdlen"      
+        echo $pwdstr | cut -c1-1
+        echo $pwdstr | cut -c2-$((pwdlen-0))
+        echo "End"
+        BUILD_JSON=$(jq -c -n \
+          --arg CI_COMMIT_REF_NAME "$CI_COMMIT_REF_NAME" \
+          '{"resources": { "repositories": { "self": { "refName": $CI_COMMIT_REF_NAME } }}}')
+        echo $BUILD_JSON
+        echo $BUILD_JSON >> build.json
+        #exit 1
+        
+    - name: Install SSH Key
+      #if: ${{ false }}
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+        
+    - name: Update Known Hosts
+      #if: ${{ false }}
+      #SSH_HOST
+      run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      #run: ssh-keyscan -H 71.209.201.240 >> ~/.ssh/known_hosts        
+        
+
+    - name: Execute Build
+      #if: ${{ false }}
+      run: |
+        buildId=$(ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/init_build.sh)
+        echo "Build Id: $buildId"
+        mv build.json "$buildId.json"
+        cat "$buildId.json"
+        echo "put $buildId.json ./cicd/$buildId.json" > sftp.upload
+        sftp -b sftp.upload rzmudzinski@${{ secrets.SSH_HOST }}
+        ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh $buildId
+      
