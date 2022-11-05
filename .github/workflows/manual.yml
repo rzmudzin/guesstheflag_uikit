@@ -36,6 +36,7 @@ jobs:
         echo $GITHUB_HEAD_REF
         echo $GITHUB_BASE_REF
         echo $GITHUB_REF
+        echo ${GITHUB_REF##*/}
         CI_COMMIT_REF_NAME="Test123"
         bash --version
         echo "Hello ${{ github.event.inputs.name }}"
