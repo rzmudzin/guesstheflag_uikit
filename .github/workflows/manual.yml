@@ -59,7 +59,8 @@ jobs:
         BUILD_JSON=$(jq -c -n \
           --arg CI_COMMIT_REF_NAME "$CI_COMMIT_REF_NAME" \
           --arg GIT_HEAD_REF "$GITHUB_HEAD_REF" \
-          '{"build": { "source": { "repo": { "refName": $CI_COMMIT_REF_NAME, "stuff": $CI_COMMIT_REF_NAME } }}}')
+          --arg GIT_REPO_URL "${{ github.repositoryUrl }}" \
+          '{"build": { "source": { "repo": { "refName": $CI_COMMIT_REF_NAME, "GIT_REPO_URL": $GIT_REPO_URL } }}}')
         echo $BUILD_JSON
         echo $BUILD_JSON >> build.json
         #exit 1
