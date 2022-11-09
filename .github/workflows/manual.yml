@@ -58,7 +58,8 @@ jobs:
         echo "End"
         BUILD_JSON=$(jq -c -n \
           --arg CI_COMMIT_REF_NAME "$CI_COMMIT_REF_NAME" \
-          '{"build": { "source": { "repo": { "refName": $CI_COMMIT_REF_NAME,"refName": $CI_COMMIT_REF_NAME } }}}')
+          --arg GIT_HEAD_REF "$GITHUB_HEAD_REF" \
+          '{"build": { "source": { "repo": { "refName": $CI_COMMIT_REF_NAME, "stuff": $CI_COMMIT_REF_NAME } }}}')
         echo $BUILD_JSON
         echo $BUILD_JSON >> build.json
         #exit 1
