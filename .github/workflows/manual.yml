@@ -64,7 +64,7 @@ jobs:
           --arg GIT_REF_BRANCH "${GITHUB_REF##*/}" \
           --arg GIT_HEAD_REF "$GITHUB_HEAD_REF" \
           --arg GIT_REPO_URL "${{ github.repositoryUrl }}" \
-          '{"build": { "source": { "repo": { "commit": $CI_COMMIT_REF_NAME, "GIT_REPO_URL": $GIT_REPO_URL, "GIT_REF_BRANCH": $GIT_REF_BRANCH, "GIT_REF": $GIT_REF, "GIT_BASE_REF": $GIT_BASE_REF, "GIT_HEAD_REF": $GIT_HEAD_REF } }}}')
+          '{"commit": $CI_COMMIT_REF_NAME, "GIT_REPO_URL": $GIT_REPO_URL, "GIT_REF_BRANCH": $GIT_REF_BRANCH, "GIT_REF": $GIT_REF, "GIT_BASE_REF": $GIT_BASE_REF, "GIT_HEAD_REF": $GIT_HEAD_REF }')
         echo $BUILD_JSON
         echo $BUILD_JSON >> build.json
         #exit 1
