@@ -92,5 +92,5 @@ jobs:
         cat "$buildId.json"
         echo "put $buildId.json ./cicd/$buildId.json" > sftp.upload
         sftp -b sftp.upload rzmudzinski@${{ secrets.SSH_HOST }}
-        ssh rzmudzinski@${{ secrets.SSH_HOST }} ./cicd/build.sh $buildId
+        ssh rzmudzinski@${{ secrets.SSH_HOST }} bash ./cicd/build.sh $buildId
       
