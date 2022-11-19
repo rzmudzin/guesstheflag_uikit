@@ -5,6 +5,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:  
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Description'
+        # Default value if no value is explicitly provided
+        default: 'xxxx'
+        # Input has to be provided for the workflow to run
+        required: true    
 
 jobs:
   build:
