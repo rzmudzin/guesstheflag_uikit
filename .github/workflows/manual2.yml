@@ -6,7 +6,7 @@ name: Second workflow
 # or API.
 on:   
   push:
-    branches: [ "devops-testing" ]
+    branches: [ "robz/devops" ]
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
