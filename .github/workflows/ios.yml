@@ -19,7 +19,7 @@ on:
 jobs:
   build:
     name: Build and Test default scheme using any available iPhone simulator
-    runs-on: [Test]
+    runs-on: [Testing]
 
     steps:
       - name: Checkout
