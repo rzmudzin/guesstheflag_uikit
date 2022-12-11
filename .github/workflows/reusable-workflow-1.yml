@@ -14,6 +14,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
-        echo "Hello ${{ github.event.inputs.name }}"
-        echo "Testing 123" > testing.txt
+        echo "Branch says Hello ${{ github.event.inputs.name }}"
+        echo "Branch Testing XYZ" > testing.txt
         pwd
