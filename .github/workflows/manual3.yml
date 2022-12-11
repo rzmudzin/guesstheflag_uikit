@@ -19,4 +19,4 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   call-workflow:
-    uses: ./.github/workflows/reusable-workflow-1.yml
+    uses: rzmudzin/shared-workflows/.github/workflows/reusable-workflow-1.yml
