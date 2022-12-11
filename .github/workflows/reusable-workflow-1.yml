@@ -2,3 +2,18 @@ name: Reusable workflow
 
 on:
   workflow_call:
+
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, DEVOPS]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send greeting
+      run: |
+        echo "Hello ${{ github.event.inputs.name }}"
+        echo "Testing 123" > testing.txt
+        pwd
