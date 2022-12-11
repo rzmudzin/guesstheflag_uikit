@@ -21,7 +21,7 @@ jobs:
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
-    runs-on: [Test]
+    runs-on: [self-hosted, IOS_PROD]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -29,4 +29,5 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
+        echo "Testing 123" > testing.txt
         pwd
