@@ -46,6 +46,5 @@ jobs:
            pwd
            echo "Echoing script path..."
            echo "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh
-           #echo "Profile Args: ${{env.profileArgs}}"
            echo "Echoing script invocation"           
            echo "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}"
