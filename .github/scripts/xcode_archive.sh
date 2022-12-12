@@ -54,20 +54,4 @@ echo "signing: $signingIdentity";
 echo "profiles: ${profileList[@]}";
 
 
-echo "BUILD_DATE_TIME = $(date)" >> "$configPath"
 
-if [ -n "${buildNumber}" ] ; then
-    echo "BUILD_NUMBER = $buildNumber" >> "$configPath"
-fi
-
-if [ -n "${productName}" ] ; then
-    echo "PRODUCT_NAME = $productName" >> "$configPath"
-fi
-
-if [ -n "${appCenterAppID}" ] ; then
-    echo "APPCENTER_APP_ID = $appCenterAppID" >> "$configPath"
-fi
-
-if [ -n "${dsapHost}" ] ; then
-    echo "DSAP_BASE_URL = $dsapHost" >> "$configPath"
-fi
