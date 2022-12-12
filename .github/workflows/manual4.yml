@@ -58,4 +58,5 @@ jobs:
            echo "Profile Args: ${profileArgs}"
            echo "Invoking Script..."
            ls -lah "${GITHUB_WORKSPACE}/"
+           "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}" ${{env.profileArgs}}
            echo "Completed"
