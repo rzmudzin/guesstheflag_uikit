@@ -49,8 +49,8 @@ jobs:
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         pwdstr="${{ secrets.SIMPLE_SECRET }}"
         #pwdlen=${#pwdstr}
-        #echo "PWD Len: $pwdlen"
-        #echo ${{ secrets.SIMPLE_SECRET }} | cut -c1-4
+        echo "PWD Len: $pwdlen"
+        echo ${{ secrets.SIMPLE_SECRET }} | cut -c1-4
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
