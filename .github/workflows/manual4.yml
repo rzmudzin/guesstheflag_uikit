@@ -33,10 +33,14 @@ jobs:
   # This workflow contains a single job called "echo_data"
   echo_data:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: [DEVOPS]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - shell: bash
         name: Archiving project
         run: |
