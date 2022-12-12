@@ -51,5 +51,5 @@ jobs:
            echo "Echoing script invocation"           
            echo "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}" ${{env.profileArgs}}
            echo "Profile Args: ${profileArgs}"
-           "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}" ${{env.profileArgs}}
+           "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh
            echo "Completed"
