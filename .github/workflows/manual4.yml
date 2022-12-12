@@ -43,5 +43,3 @@ jobs:
            echo "Archive Path: ${archivePath}"
            echo "Config Path: ${configPath}"
            echo "Signing Identity: ${signingIdentity}"
-           #echo "Profile Args: ${{env.profileArgs}}"
-           #"${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}" ${{env.profileArgs}}
