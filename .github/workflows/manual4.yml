@@ -37,6 +37,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
+      - shell: bash
       - name: Archiving project
         run: |
            echo "Workspace: ${{github.workspace}}"
@@ -52,5 +53,5 @@ jobs:
            echo "${GITHUB_WORKSPACE}"/.github/scripts/xcode_archive.sh -s "${scheme}" -c "${config}" -i "${archivePath}" -C "${configPath}" -S "${signingIdentity}" ${{env.profileArgs}}
            echo "Profile Args: ${profileArgs}"
            echo "Invoking Script..."
-           ls -lah .
+           ls -lah "${GITHUB_WORKSPACE}"
            echo "Completed"
