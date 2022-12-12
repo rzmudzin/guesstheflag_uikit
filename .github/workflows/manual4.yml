@@ -38,7 +38,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
       - shell: bash
-      - name: Archiving project
+        name: Archiving project
         run: |
            echo "Workspace: ${{github.workspace}}"
            echo "Scheme: ${{env.scheme}}"
