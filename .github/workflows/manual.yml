@@ -30,7 +30,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Initialize Environment
+    - shell: bash
+      name: Initialize Environment
       run: |
         echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         echo $GITHUB_HEAD_REF
@@ -46,10 +47,10 @@ jobs:
         echo "Hello ${{ github.event.inputs.name }}"
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
-        pwdstr=${{ secrets.SIMPLE_SECRET }}
-        pwdlen=${#pwdstr}
-        echo "PWD Len: $pwdlen"
-        echo ${{ secrets.SIMPLE_SECRET }} | cut -c1-4
+        pwdstr="${{ secrets.SIMPLE_SECRET }}"
+        #pwdlen=${#pwdstr}
+        #echo "PWD Len: $pwdlen"
+        #echo ${{ secrets.SIMPLE_SECRET }} | cut -c1-4
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
