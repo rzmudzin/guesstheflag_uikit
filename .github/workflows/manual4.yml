@@ -43,3 +43,4 @@ jobs:
            echo "Archive Path: ${archivePath}"
            echo "Config Path: ${configPath}"
            echo "Signing Identity: ${signingIdentity}"
+           echo "Profile Args: ${{env.profileArgs}}"
