@@ -24,7 +24,8 @@ env:
     profileArgs: >
         -P "APP_PROVISIONING_PROFILE ; com.marriott.kony.iphonetest ; ${GITHUB_WORKSPACE}/Profiles and Certificates/Marriott_iPhone_Test.mobileprovision"
         -P "WATCH_APP_PROVISIONING_PROFILE ; com.marriott.kony.iphonetest.watchkitapp ; ${{github.workspace}}/Profiles and Certificates/Marriott_iPhone_Test_WatchKit_App.mobileprovision"
-        -P "WATCH_EXT_PROVISIONING_PROFILE ; com.marriott.kony.iphonetest.watchkitapp.watchextension ; ${GITHUB_WORKSPACE}/Profiles and Certificates/Marriott_iPhone_Test_WatchKit_Extension.mobileprovision"        
+        -P "WATCH_EXT_PROVISIONING_PROFILE ; com.marriott.kony.iphonetest.watchkitapp.watchextension ; ${GITHUB_WORKSPACE}/Profiles and Certificates/Marriott_iPhone_Test_WatchKit_Extension.mobileprovision"
+        -P "NOTIFICATION_EXTENSION_PROVISIONING_PROFILE ; com.marriott.kony.iphonetest.notificationextension ; ${GITHUB_WORKSPACE}/Profiles and Certificates/Marriott_iPhone_Test_Notification_Extension.mobileprovision"        
 
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
