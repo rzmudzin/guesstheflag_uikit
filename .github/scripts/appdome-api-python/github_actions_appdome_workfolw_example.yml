@@ -1,0 +1,85 @@
+# This is a basic workflow for integrating appdome-api-python with your github project
+# File location should be under .github/workflows/
+name: Appdome Workflow
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # A demo job that builds an application to use with appdome
+  build_app:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          path: main
+          
+     # Cloning appdome-api-python github repository
+      - name: Cloning appdome-api-python github repository
+        uses: actions/checkout@master
+        with:
+          repository: Appdome/appdome-api-python
+          ref: refs/heads/main
+          path: appdome
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Building my app
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Build app
+          echo sign app
+      
+      # Run appdome api for Android apps
+      - name: Appdome workflow for Android apps
+        env: # creating needed environment variables using GitHub secrets
+          APPDOME_API_KEY: ${{ secrets.APPDOME_API_KEY }}
+          APPDOME_TEAM_ID: ${{ secrets.APPDOME_TEAM_ID }}
+          APPDOME_ANDROID_FS_ID: ${{ secrets.APPDOME_ANDROID_FS_ID }}
+        run: |
+          mkdir outputs
+          pip3 install -r appdome/requirements.txt
+          python3 appdome/appdome-api-python/appdome_api.py --app <apk/aab file> --sign_on_appdome --keystore <keystore file> \
+                  --keystore_pass <keystore password> --keystore_alias <key alias> --key_pass <key password> \
+                  --output outputs/<output apk/aab> --certificate_output outputs/<output certificate pdf>
+          ls outputs
+          
+      # Run appdome api for iOS apps
+      - name: Appdome workflow for Android apps
+        env: # creating needed environment variables using GitHub secrets
+          APPDOME_API_KEY: ${{ secrets.APPDOME_API_KEY }}
+          APPDOME_TEAM_ID: ${{ secrets.APPDOME_TEAM_ID }}
+          APPDOME_IOS_FS_ID: ${{ secrets.APPDOME_IOS_FS_ID }}
+        run: |
+          mkdir outputs
+          pip3 install -r appdome/requirements.txt
+          python3 appdome/appdome-api-python/appdome_api.py --app <ipa file> --sign_on_appdome --keystore <p12 file> \
+                  --keystore_pass <p12 password> --provisioning_profiles <provisioning profile file> <another provisioning profile file if needed> \
+                  --entitlements <entitlements file> <another entitlements file if needed> --output outputs/<output ipa> 
+                  --certificate_output outputs/<output certificate pdf>
+          ls outputs
+      
+      # Upload fuse output as an artifacts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: workflow-artifacts
+          path: outputs # path to output folder
+    
+          
+
