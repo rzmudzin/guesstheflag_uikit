@@ -48,7 +48,7 @@ jobs:
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
         var="${{ secrets.SIMPLE_SECRET }}"
-        varlen=${#pwdstr}
+        varlen=${#var}
         echo "PWD Len: $varlen"
         echo $var | cut -c2-$varlen
         echo $var | cut -c1-1
