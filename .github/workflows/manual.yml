@@ -47,10 +47,11 @@ jobs:
         echo "Hello ${{ github.event.inputs.name }}"
         echo "Echoing Secret..."
         echo "Secret: ${{ secrets.SIMPLE_SECRET }}"
-        pwdstr="${{ secrets.SIMPLE_SECRET }}"
-        pwdlen=${#pwdstr}
-        echo "PWD Len: $pwdlen"
-        echo ${{ secrets.SIMPLE_SECRET }} | cut -c2-$pwdlen
+        var="${{ secrets.SIMPLE_SECRET }}"
+        varlen=${#pwdstr}
+        echo "PWD Len: $varlen"
+        echo $var | cut -c2-$varlen
+        echo $var | cut -c1-1
         echo "Start"
         testValue="Test Data"
         echo "Test Data: $testValue"        
