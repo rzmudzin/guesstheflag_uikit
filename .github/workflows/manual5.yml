@@ -27,4 +27,4 @@ jobs:
         echo "Message: ${{ github.event.inputs.message }}" 
         echo "Use Emoji: ${{ github.event.inputs.use-emoji }}"
         $echo ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} 
-        echo "${{ github.event.inputs.name }}"
+        echo "Choice: ${{ github.event.inputs.name }}"
