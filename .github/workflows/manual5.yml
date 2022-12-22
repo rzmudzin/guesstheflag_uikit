@@ -23,6 +23,6 @@ jobs:
     - name: Send greeting
       run: |
         echo "Test"
-        echo "Message: ${{ github.event.inputs.message }} 
+        echo "Message: ${{ github.event.inputs.message }}" 
         echo ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} 
         echo "${{ github.event.inputs.name }}"
