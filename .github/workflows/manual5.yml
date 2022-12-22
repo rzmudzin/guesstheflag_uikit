@@ -12,6 +12,8 @@ on:
       use-emoji:
         type: boolean
         description: Include  emojis
+      message:
+        required: true        
 
 jobs:
   greet:
