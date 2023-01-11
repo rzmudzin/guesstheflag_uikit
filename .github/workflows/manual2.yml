@@ -22,9 +22,14 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - shell: bash
+        name: "Set Env"
         run: |
           hostname -s
           echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV
-  call-workflow:
-    name: Call Workflow
-    uses: ./.github/workflows/reusable-workflow-1.yml
+      - shell: bash
+        name: "Echo Test"
+        run: |
+          echo "exportPath: $exportPath"
+      - name: call-workflow
+        #name: Call Workflow
+        uses: ./.github/workflows/reusable-workflow-1.yml
