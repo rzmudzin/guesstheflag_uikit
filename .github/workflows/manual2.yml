@@ -17,5 +17,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  build:
+    name: Build and Archive TST scheme for AppCenter Distribution
+    runs-on: [self-hosted]
+    steps:
+      - shell: bash
+        run: |
+          hostname -s
+          echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV
   call-workflow:
+    name: Call Workflow
     uses: ./.github/workflows/reusable-workflow-1.yml
