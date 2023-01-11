@@ -31,7 +31,10 @@ jobs:
         run: |
           echo "exportPath: $exportPath"
   call-workflow:
-    runs-on: [self-hosted]
-    steps:
-      - name: Call Workflow
-        uses: ./.github/workflows/reusable-workflow-1.yml
+     name: Call Workflow
+     uses: ./.github/workflows/reusable-workflow-1.yml          
+#  call-workflow:
+#    runs-on: [self-hosted]
+#    steps:
+#      - name: Call Workflow
+#        uses: ./.github/workflows/reusable-workflow-1.yml
