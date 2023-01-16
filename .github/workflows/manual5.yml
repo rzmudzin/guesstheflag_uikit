@@ -20,17 +20,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set Environment Variables
-      uses: ./.github/actions/setvars
-      with:
-        varFilePath: ./.github/variables/myvars.env    
-    - name: Send greeting
-      run: |
-        echo "Test"
-        echo "MYVAR1: $MYVAR1"
-        #echo  The tags are ${{ inputs.tags }}        
-        echo "Message: ${{ github.event.inputs.message }}" 
-        echo "Use Emoji: ${{ github.event.inputs.use-emoji }}"
-        $echo ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} 
-        echo "Choice: ${{ github.event.inputs.name }}"
+      - shell: bash
+        name: "Set Base Env"
+        run: |
+          hostname -s
+          echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV    
+      - uses: actions/checkout@v3
+      - name: Set Environment Variables
+        uses: ./.github/actions/setvars
+        with:
+          varFilePath: ./.github/variables/myvars.env    
+      - name: Send greeting
+        run: |
+          echo "Test"
+          echo "MYVAR1: $MYVAR1"
+          #echo  The tags are ${{ inputs.tags }}        
+          echo "Message: ${{ github.event.inputs.message }}" 
+          echo "Use Emoji: ${{ github.event.inputs.use-emoji }}"
+          $echo ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} 
+          echo "Choice: ${{ github.event.inputs.name }}"
