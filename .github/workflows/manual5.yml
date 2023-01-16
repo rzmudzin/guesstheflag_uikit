@@ -28,6 +28,7 @@ jobs:
     - name: Send greeting
       run: |
         echo "Test"
+        echo "MYVAR1: $MYVAR1"
         #echo  The tags are ${{ inputs.tags }}        
         echo "Message: ${{ github.event.inputs.message }}" 
         echo "Use Emoji: ${{ github.event.inputs.use-emoji }}"
