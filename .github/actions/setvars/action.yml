@@ -11,3 +11,6 @@ runs:
     - run: |
         sed "" ${{ inputs.varFilePath }} >> $GITHUB_ENV
       shell: bash
+    - name: Send greeting
+      run: |
+        echo "Test"
