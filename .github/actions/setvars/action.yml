@@ -15,4 +15,5 @@ runs:
     - shell: bash
       run: |
         sed "" ${{ inputs.varFilePath }} >> $GITHUB_ENV
+        echo "exportPath=Modified" >> $GITHUB_ENV
       
