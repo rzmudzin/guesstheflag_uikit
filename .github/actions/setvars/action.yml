@@ -9,6 +9,10 @@ runs:
   using: "composite"
   steps:
     - shell: bash
+      name: Echo Env
+      run: |
+        echo "exportPath: $exportPath"
+    - shell: bash
       run: |
         sed "" ${{ inputs.varFilePath }} >> $GITHUB_ENV
       
