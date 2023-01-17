@@ -27,6 +27,7 @@ jobs:
         run: |
           hostname -s
           echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV    
+          date > timestamp.txt
       - name: Set Environment Variables
         uses: tw3lveparsecs/github-actions-setvars@latest
         with:
@@ -35,7 +36,13 @@ jobs:
 #      - name: Set Environment Variables
 #        uses: ./.github/actions/setvars
 #        with:
-#          varFilePath: ./.github/variables/myvars.env    
+#          varFilePath: ./.github/variables/myvars.env   
+      - name: Upload Time Stamp
+        #if: ${{ false }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: timestamp
+          path: timestamp.txt
       - name: Send greeting
         run: |
           echo "Test"
