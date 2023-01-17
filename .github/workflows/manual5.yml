@@ -27,9 +27,13 @@ jobs:
           echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV    
       - uses: actions/checkout@v3
       - name: Set Environment Variables
-        uses: ./.github/actions/setvars
+        uses: tw3lveparsecs/github-actions-setvars@latest
         with:
-          varFilePath: ./.github/variables/myvars.env    
+         envFilePath: ./drop/.github/variables/myvars.env      
+#      - name: Set Environment Variables
+#        uses: ./.github/actions/setvars
+#        with:
+#          varFilePath: ./.github/variables/myvars.env    
       - name: Send greeting
         run: |
           echo "Test"
