@@ -23,7 +23,7 @@ jobs:
           echo "Just some basic testing to see what is what"
           var="${{secrets.SIMPLE_SECRET}}"
           echo "Var: $var"
-          #varlen=${#var}
-          #echo "Len: $varlen"
-          #echo $var | cut -c2-$varlen          
-          #echo $var | cut -c1-1          
+          varlen=${#var}
+          echo "Len: $varlen"
+          echo $var | cut -c2-$varlen          
+          echo $var | cut -c1-1          
