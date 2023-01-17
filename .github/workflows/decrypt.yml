@@ -21,7 +21,7 @@ jobs:
         name: echo events
         run: |
           echo "Just some basic testing to see what is what"
-          var="${{secrets.SIMPLE_SECRET}}"
+          var="${{secrets.SOME_SECRET}}"
           echo "Var: $var"
           varlen=${#var}
           echo "Len: $varlen"
