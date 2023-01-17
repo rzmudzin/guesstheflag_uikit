@@ -20,16 +20,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3    
       - shell: bash
         name: "Set Base Env"
         run: |
           hostname -s
           echo "exportPath=$HOME/build/INT" >> $GITHUB_ENV    
-      - uses: actions/checkout@v3
       - name: Set Environment Variables
         uses: tw3lveparsecs/github-actions-setvars@latest
         with:
-         envFilePath: ./drop/.github/variables/myvars.env      
+         envFilePath: ./drop/.github/variables/myvars.env     
+#      - uses: actions/checkout@v3         
 #      - name: Set Environment Variables
 #        uses: ./.github/actions/setvars
 #        with:
