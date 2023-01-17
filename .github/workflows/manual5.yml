@@ -30,7 +30,7 @@ jobs:
       - name: Set Environment Variables
         uses: tw3lveparsecs/github-actions-setvars@latest
         with:
-         envFilePath: ./drop/.github/variables/myvars.env     
+         envFilePath: ./.github/variables/myvars.env
 #      - uses: actions/checkout@v3         
 #      - name: Set Environment Variables
 #        uses: ./.github/actions/setvars
