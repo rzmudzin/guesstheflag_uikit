@@ -7,7 +7,7 @@ on:
       text_to_print:
         description: 'What text do you want to print?'
 #         required: true
-        default: 'Periodically printing passages'
+#         default: 'Periodically printing passages'
 
 jobs:
   print_text:
