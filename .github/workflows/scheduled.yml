@@ -16,10 +16,11 @@ jobs:
       - name: Set the variables
         env:
           github.event.inputs.text_to_print: "WTF"
-          dsap: >
-            "${{ github.event.inputs.text_to_print || 'The default value to use' }}"
+          #dsap: >            "${{ github.event.inputs.text_to_print || 'The default value to use' }}"
           DEFAULT_MESSAGE: 'Default Message' # here is the default message
-        run: echo "text_to_print=${{ github.event.inputs.text_to_print || 'The default value to use' }}" >> $GITHUB_ENV
+        run: |
+           echo "text_to_print=${{ github.event.inputs.text_to_print || 'The default value to use' }}" >> $GITHUB_ENV
+           echo "dsap=${{ github.event.inputs.text_to_print || 'The default value to use' }}" >> $GITHUB_ENV
 
       - name: Print some text
         run: |
