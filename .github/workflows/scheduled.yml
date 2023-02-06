@@ -21,7 +21,7 @@ jobs:
            echo "dsap=${{ github.event.inputs.dsap || 'uat1' }}" >> $GITHUB_ENV
            
       - name: DSAP uat1
-        if: ${dsap} == 'uat1'
+        if: ${{ env.dsap == 'uat1' }}
         run: |
           echo "DSAP_URL=gatewaydsapuat1.marriott.com" >> $GITHUB_ENV
           
