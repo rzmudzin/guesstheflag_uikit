@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Set the variables
         env:
-          DEFAULT_MESSAGE: 'Periodically printing passages' # here is the default message
+          DEFAULT_MESSAGE: 'Default Message' # here is the default message
         run: echo "MESSAGE=${{ github.event.inputs.text_to_print || env.DEFAULT_MESSAGE }}" >> $GITHUB_ENV
 
       - name: Print some text
