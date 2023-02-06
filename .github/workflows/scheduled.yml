@@ -1,18 +1,22 @@
-# This is a basic workflow that is manually triggered
-
-name: Scheduled workflow
-
-on: 
+name: Every 3rd minute
+on:
   schedule:
-  - cron: '*/5 * * * *'
+    - cron: '1/3 * * * *'
+  workflow_dispatch: # adding the workflow_dispatch so it can be triggered manually
+    inputs:
+      text_to_print:
+        description: 'What text do you want to print?'
+        required: true
+        default: 'Periodically printing passages'
 
 jobs:
-  job1:
-    name: Debug
-    runs-on: ubuntu-latest
-
+  print_text:
+    runs-on: 'ubuntu-20.04'
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v2
-    - name: List files
-      run: ls
+      - name: Set the variables
+        env:
+          DEFAULT_MESSAGE: 'Periodically printing passages' # here is the default message
+        run: echo "MESSAGE=${{ github.event.inputs.text_to_print || env.DEFAULT_MESSAGE }}" >> $GITHUB_ENV
+
+      - name: Print some text
+        run: echo "$MESSAGE" # prints the environmental variable, MESSAGE
