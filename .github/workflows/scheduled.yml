@@ -24,3 +24,4 @@ jobs:
         run: |
           echo "$text_to_print" # prints the environmental variable, MESSAGE
           echo "DSAP: ${dsap}"
+          echo "DSAP: ${{env.dsap}}"
