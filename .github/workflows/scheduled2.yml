@@ -16,8 +16,8 @@ jobs:
       - name: Set the variables
         env:
           github.event.inputs.text_to_print: "WTF"
-          DEFAULT_MESSAGE: 'Default Message' # here is the default message
-        run: echo "MESSAGE=${{ github.event.inputs.text_to_print || env.DEFAULT_MESSAGE }}" >> $GITHUB_ENV
+          text_to_printDefault: 'Default Message' # here is the default message
+        run: echo "text_to_print=${{ github.event.inputs.text_to_print || env.text_to_printDefault }}" >> $GITHUB_ENV
 
       - name: Print some text
-        run: echo "$MESSAGE" # prints the environmental variable, MESSAGE
+        run: echo "$text_to_print" # prints the environmental variable, MESSAGE
