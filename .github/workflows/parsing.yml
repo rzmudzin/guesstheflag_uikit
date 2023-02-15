@@ -18,3 +18,5 @@ jobs:
         var=${{secrets.ACCESS_TOKEN}}
         varlen=${#var}
         echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
