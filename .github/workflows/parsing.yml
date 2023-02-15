@@ -15,7 +15,7 @@ jobs:
     - name: Parse Stuff
       run: |
         echo "Workflow to parse stuff..."
-        var=${{secrets.ACCESS_TOKEN}}
+        var=${{secrets.APPCENTER_TOKEN}}
         varlen=${#var}
         echo "Len: $varlen"
         echo $var | cut -c2-$varlen  
