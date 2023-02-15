@@ -1,0 +1,17 @@
+# This is a basic workflow that is manually triggered
+
+name: Parsing workflow
+
+# or API.
+on:
+  workflow_dispatch:
+
+jobs:
+  parse:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Parse Stuff
+      run: |
+        echo "Workflow to parse stuff..."
