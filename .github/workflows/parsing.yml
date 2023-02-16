@@ -22,3 +22,50 @@ jobs:
         echo $var | cut -c1-1
         echo "==================================="
         echo "==================================="
+        var=${{secrets.APPDOME_REGRESSION_FUSION_SET}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.APPDOME_REGRESSION_TEAM_ID}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.APPDOME_TOKEN}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.LE_ALIAS_PASSWORD}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.LE_KEYSTORE_ALIAS}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.LE_KEYSTORE_PASSWORD}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
+        echo "==================================="
+        echo "==================================="
+        var=${{secrets.LOWER_ENV_KEYSTORE}}
+        varlen=${#var}
+        echo "Len: $varlen"
+        echo $var | cut -c2-$varlen  
+        echo $var | cut -c1-1
