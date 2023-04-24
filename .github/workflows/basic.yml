@@ -33,4 +33,6 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
-        ${{github.workspace}}/.github/scripts/simulate-work.sh
+        pwd
+        find . -name simulate-work.sh
+        #${{github.workspace}}/.github/scripts/simulate-work.sh
