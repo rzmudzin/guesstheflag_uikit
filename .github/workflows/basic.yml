@@ -37,6 +37,6 @@ jobs:
         pwd
         ls -lah
         echo "Searching for script files"
-        find .. -name simulate-work.sh
+        find . -name simulate-work.sh
         echo "Search Complete"
-        #${{github.workspace}}/.github/scripts/simulate-work.sh
+        ${{github.workspace}}/.github/scripts/simulate-work.sh
