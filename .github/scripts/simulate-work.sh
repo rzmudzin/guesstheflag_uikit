@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SLEEP_TIME=15
+SLEEP_TIME=10
 max=30
 counter=0
 while true;
