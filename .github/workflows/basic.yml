@@ -34,5 +34,5 @@ jobs:
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
         pwd
-        find . -name simulate-work.sh
+        find .. -name simulate-work.sh
         #${{github.workspace}}/.github/scripts/simulate-work.sh
