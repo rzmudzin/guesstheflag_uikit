@@ -40,4 +40,4 @@ jobs:
         echo "Searching for script files"
         find . -name simulate-work.sh
         echo "Search Complete"
-        "${{github.workspace}}/.github/scripts/simulate-work.sh ${{ github.event.inputs.forceFail }}"
+        ${{github.workspace}}/.github/scripts/simulate-work.sh "${{ github.event.inputs.forceFail }}"
