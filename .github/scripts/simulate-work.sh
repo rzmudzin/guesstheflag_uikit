@@ -19,6 +19,8 @@ do
 
   : $((counter++))
 done
-if [[ $forceFail != "0" ]]; then
-    exit 11
-fi
+if [[ ! -z "$forceFail" ]]; then
+    if [[ $forceFail != "0" ]]; then
+        exit 11
+    fi
+fi    
