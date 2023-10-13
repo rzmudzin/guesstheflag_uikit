@@ -6,9 +6,11 @@ on:
 jobs:
   job2:
     uses: ./.github/workflows/reusable-workflow-2.yml
+    with:
+      firstword: "The first word"
 
-  job3:
-    runs-on: ubuntu-latest
-    needs: job2
-    steps:
-      - run: echo ${{ needs.job2.outputs.firstword }} ${{ needs.job2.outputs.secondword }}
+  #job3:
+  #  runs-on: ubuntu-latest
+  #  needs: job2
+  #  steps:
+  #    - run: echo ${{ needs.job2.outputs.firstword }} ${{ needs.job2.outputs.secondword }}
