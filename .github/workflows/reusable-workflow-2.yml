@@ -2,6 +2,10 @@ name: Reusable II
 
 on:
   workflow_call:
+    inputs:
+      word_uno:
+        description: 'The first worked'
+        type: string
     # Map the workflow outputs to job outputs
     outputs:
       firstword:
