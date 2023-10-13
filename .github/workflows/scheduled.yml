@@ -10,6 +10,10 @@ on:
 #        default: 'tst1'
 
 jobs:
+  job2:
+    uses: ./.github/workflows/reusable-workflow-2.yml
+    with:
+      word_uno: "The first word"
   print_text:
     runs-on: 'ubuntu-20.04'
     steps:
