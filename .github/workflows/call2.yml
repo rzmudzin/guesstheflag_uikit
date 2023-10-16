@@ -5,7 +5,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [DEVOPS]
+    # runs-on: ubuntu-latest
     steps:
       - name: Trigger Workflow
         uses: actions/github-script@v6
