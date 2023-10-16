@@ -29,7 +29,10 @@ on:
         type: boolean
         default: 'false'
         description: 'Cancel job if no changes detected'
-
+      attach_commit_hash:
+        type: boolean
+        default: 'true'
+        description: 'Attach commit hash to run'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
