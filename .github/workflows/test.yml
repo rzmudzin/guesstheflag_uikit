@@ -16,15 +16,15 @@ on:
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
-        type: string
-      fusionid:
-        type: choice
-        description: Fusion Set
-        options:
-        - ""
-        - "MITM"
-        - "No MITM"
-        default: "No MITM"        
+      #   type: string
+      # fusionid:
+      #   type: choice
+      #   description: Fusion Set
+      #   options:
+      #   - ""
+      #   - "MITM"
+      #   - "No MITM"
+      #   default: "No MITM"        
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
