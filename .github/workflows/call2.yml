@@ -18,7 +18,8 @@ jobs:
               workflow_id: 'test.yml',
               ref: 'main',
               inputs: {
-                name: 'Mo'
+                name: 'Mo Fish',
+                fusionid: 'MITM'
               }
             })
   # job2:
