@@ -20,7 +20,7 @@ jobs:
               inputs: {
                 name: 'Mo Fish',
                 fusionid: 'MITM',
-                cancelable: 'true'
+                # cancelable: 'true'
               }
             })
   # job2:
