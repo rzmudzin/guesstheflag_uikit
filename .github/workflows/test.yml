@@ -45,3 +45,4 @@ jobs:
         echo "Hello ${{ inputs.name }}"
         echo "fusionid: ${{ inputs.fusionid }}"
         echo "Build number: ${{github.run_number}}"
+        echo "EVent Name: ${{github.event_name}}"
