@@ -19,7 +19,8 @@ jobs:
               ref: 'main',
               inputs: {
                 name: 'Mo Fish',
-                fusionid: 'MITM'
+                fusionid: 'MITM',
+                cancelable: 'true'
               }
             })
   # job2:
