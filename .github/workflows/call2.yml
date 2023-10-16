@@ -20,7 +20,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               workflow_id: 'test.yml',
-              ref: 'refs/heads/another_branch',
+              ref: ${GITHUB_REF},
               inputs: {
                 name: 'Mo Fish',
                 fusionid: 'MITM'
