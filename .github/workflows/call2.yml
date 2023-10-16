@@ -19,11 +19,11 @@ jobs:
             github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'test.yml',
-              ref: ${GITHUB_REF},
+              workflow_id: "test.yml",
+              ref: "${GITHUB_REF}",
               inputs: {
-                name: 'Mo Fish',
-                fusionid: 'MITM'
+                name: "Mo Fish",
+                fusionid: "MITM"
               }
             })
   # job2:
