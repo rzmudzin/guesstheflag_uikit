@@ -25,6 +25,8 @@ jobs:
       output2: ${{ steps.step2.outputs.secondword }}
     steps:
       - id: step1
-        run: echo "::set-output name=firstword::hello"
+        run: |
+           echo "Callable Build Number: ${{env.buildNumberBase}}"
+           echo "::set-output name=firstword::hello"
       - id: step2
         run: echo "::set-output name=secondword::world"
