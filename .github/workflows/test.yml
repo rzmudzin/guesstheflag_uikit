@@ -39,6 +39,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
-        echo "Hello ${{ inputs.name }}"
+        echo "What up ${{ inputs.name }}"
         echo "fusionid: ${{ inputs.fusionid }}"
         echo "Build number: ${{github.run_number}}"
