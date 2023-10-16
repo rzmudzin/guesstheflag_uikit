@@ -25,9 +25,11 @@ on:
         - "MITM"
         - "No MITM"
         default: "No MITM" 
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
+      cancelable:
+        type: boolean
+        default: 'false'
+        description: 'Cancel job if no changes detected'
+	      
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
