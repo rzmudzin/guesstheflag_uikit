@@ -40,4 +40,5 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ inputs.name }}"
+        echo "fusionid: ${{ inputs.fusionid }}"
         echo "Build number: ${{github.run_number}}"
