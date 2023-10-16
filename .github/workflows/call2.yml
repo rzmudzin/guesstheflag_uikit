@@ -16,6 +16,9 @@ jobs:
               repo: context.repo.repo,
               workflow_id: 'test.yml',
               ref: 'main',
+              inputs: {
+                name: 'Mo'
+              }
             })
   # job2:
   #   uses: ./.github/workflows/reusable-workflow-2.yml
