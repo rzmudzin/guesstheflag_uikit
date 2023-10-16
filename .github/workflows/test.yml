@@ -33,6 +33,10 @@ on:
         type: boolean
         default: 'true'
         description: 'Attach commit hash to run'
+      upload_to_app_center:
+        type: boolean
+        default: 'true'
+        description: 'Upload ipa to App Center'        
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
