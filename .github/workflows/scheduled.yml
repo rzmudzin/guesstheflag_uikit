@@ -30,6 +30,7 @@ jobs:
           test: "WTF"
           #dsap: >            "${{ github.event.inputs.text_to_print || 'The default value to use' }}"
         run: |
+           echo "Build number: ${{env.buildNumberBase}}"
            echo "dsap=${{ github.event.inputs.dsap || 'uat1' }}" >> $GITHUB_ENV
            
       - name: DSAP uat1
