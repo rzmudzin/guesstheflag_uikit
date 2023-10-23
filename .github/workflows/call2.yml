@@ -14,6 +14,14 @@ jobs:
           echo "Run Number: ${{github.run_number}}"
           echo "Branch: ${{github.ref}}"
           echo "running on branch ${GITHUB_REF}"
+
+      - name: Download Recent Successful Commit
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: commitlog
+          github_token: "changes"
+          check_artifacts: true
+          search_artifacts: true          
       - name: Create Change Log For Manual Dispatch
         run: |
            date > changelog.txt          
