@@ -18,8 +18,8 @@ jobs:
       - name: Download Recent Successful Commit
         uses: dawidd6/action-download-artifact@v2
         with:
-          name: commitlog
-          github_token: "changes"
+          name: changes
+          github_token: ${{github.token}}
           check_artifacts: true
           search_artifacts: true          
       - name: Create Change Log For Manual Dispatch
