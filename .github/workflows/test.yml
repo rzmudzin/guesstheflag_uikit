@@ -56,7 +56,8 @@ jobs:
       with:
           name: changes
           github_token: ${{github.token}}
-          workflow: call2.yml
+          # workflow: call2.yml
+          run_id: ${{inputs.commit_source}}
           check_artifacts: true
           search_artifacts: true          
 
