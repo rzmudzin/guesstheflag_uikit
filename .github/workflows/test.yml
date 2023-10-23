@@ -58,6 +58,10 @@ jobs:
           workflow: call2.yml
           check_artifacts: true
           search_artifacts: true          
+
+    - name: Process Last Commit Hash Info
+      run: |
+        ls -lah
     - name: Send greeting
       run: |
         echo "Commit Hash Source: ${{ inputs.commit_source }}"
