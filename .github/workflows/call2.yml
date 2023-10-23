@@ -50,8 +50,8 @@ jobs:
               workflow_id: "test.yml",
               ref: context.ref,
               inputs: {
-                name: "Mo Fish",
-                fusionid: context.repo.owner
+                name: context.repo.owner,
+                fusionid: "MITM"
               }
             })
   # job2:
