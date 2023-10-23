@@ -50,7 +50,8 @@ jobs:
               workflow_id: "test.yml",
               ref: context.ref,
               inputs: {
-                name: context.repo.owner,
+                name: "Mo Fish",
+                commit_source: context.runId,
                 fusionid: "MITM"
               }
             })
