@@ -14,15 +14,6 @@ jobs:
           echo "Run Number: ${{github.run_number}}"
           echo "Branch: ${{github.ref}}"
           echo "running on branch ${GITHUB_REF}"
-
-      - name: Download Recent Successful Commit
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          name: changes
-          github_token: ${{github.token}}
-          workflow: call2.yml
-          check_artifacts: true
-          search_artifacts: true          
       - name: Create Change Log For Manual Dispatch
         run: |
            date > changelog.txt
@@ -32,7 +23,19 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: changes
-          path: changelog.txt           
+          path: changelog.txt  
+      - name: Remove Current Change Log
+        run: |
+           rm changelog.txt          
+      - name: Download Recent Successful Commit
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: changes
+          github_token: ${{github.token}}
+          workflow: call2.yml
+          workflow_conclusion: in_progress
+          check_artifacts: true
+          search_artifacts: true                    
       - name: Trigger Workflow
         uses: actions/github-script@v6
         with:
