@@ -12,6 +12,14 @@ jobs:
         run: |
           echo "Branch: ${{github.ref}}"
           echo "running on branch ${GITHUB_REF}"
+      - name: Create Change Log For Manual Dispatch
+        run: |
+           date > changelog.txt          
+      - name: Upload changes
+        uses: actions/upload-artifact@v3
+        with:
+          name: changes
+          path: changelog.txt           
       - name: Trigger Workflow
         uses: actions/github-script@v6
         with:
