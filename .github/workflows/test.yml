@@ -17,6 +17,8 @@ on:
         required: true
         # The data type of the input
       #   type: string
+      commit_source:
+        description: Run Id of commit hash source
       fusionid:
         type: choice
         description: Fusion Set
@@ -51,6 +53,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
+        echo "Commit Hash Source: ${{ inputs.commit_source }}"
         echo "Hello ${{ inputs.name }}"
         echo "fusionid: ${{ inputs.fusionid }}"
         echo "Build number: ${{github.run_number}}"
