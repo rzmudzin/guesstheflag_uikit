@@ -51,7 +51,7 @@ jobs:
               ref: context.ref,
               inputs: {
                 name: "Mo Fish",
-                commit_source: context.runId,
+                commit_source: context.runId.toString(),
                 fusionid: "MITM"
               }
             })
