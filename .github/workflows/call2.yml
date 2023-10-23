@@ -28,6 +28,10 @@ jobs:
         run: |
            rm changelog.txt          
       - name: Download Recent Successful Commit
+        env:
+          changeLog: changes.txt
+          scheme: 'Marriott (TST)'
+          config: Integration      
         uses: dawidd6/action-download-artifact@v2
         with:
           name: changes
