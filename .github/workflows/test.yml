@@ -62,6 +62,7 @@ jobs:
     - name: Process Last Commit Hash Info
       run: |
         ls -lah
+        cat changelog.txt
     - name: Send greeting
       run: |
         echo "Commit Hash Source: ${{ inputs.commit_source }}"
