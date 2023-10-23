@@ -19,6 +19,7 @@ on:
       #   type: string
       commit_source:
         description: Run Id of commit hash source
+        type: string
       fusionid:
         type: choice
         description: Fusion Set
