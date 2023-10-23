@@ -51,7 +51,7 @@ jobs:
               ref: context.ref,
               inputs: {
                 name: "Mo Fish",
-                fusionid: "MITM"
+                fusionid: context.repo.owner
               }
             })
   # job2:
