@@ -17,8 +17,8 @@ jobs:
       - name: Create Change Log For Manual Dispatch
         run: |
            date > changelog.txt
-           echo "Run Id: ${{ github.run_id }}"
-           echo "Run Number: ${{github.run_number}}"
+           echo "Run Id: ${{ github.run_id }}" >> changelog.txt
+           echo "Run Number: ${{github.run_number}}" >> changelog.txt
       - name: Upload changes
         uses: actions/upload-artifact@v3
         with:
