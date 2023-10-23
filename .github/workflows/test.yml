@@ -50,7 +50,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
+    - name: Download Recent Successful Commit
+      uses: dawidd6/action-download-artifact@v2
+      with:
+          name: changes
+          github_token: ${{github.token}}
+          workflow: call2.yml
+          check_artifacts: true
+          search_artifacts: true          
     - name: Send greeting
       run: |
         echo "Commit Hash Source: ${{ inputs.commit_source }}"
