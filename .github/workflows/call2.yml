@@ -8,8 +8,10 @@ jobs:
     runs-on: [DEVOPS]
     # runs-on: ubuntu-latest
     steps:
-      - name: Branch name
+      - name: Run Info
         run: |
+          echo "Run Id: ${{ github.run_id }}"
+          echo "Run Number: ${{github.run_number}}"
           echo "Branch: ${{github.ref}}"
           echo "running on branch ${GITHUB_REF}"
       - name: Create Change Log For Manual Dispatch
