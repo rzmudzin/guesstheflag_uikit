@@ -67,6 +67,7 @@ jobs:
         cat changelog.txt
     - name: Send greeting
       run: |
+        echo "Actor: ${{github.actor}}"
         echo "Commit Hash Source: ${{ inputs.commit_source }}"
         echo "Hello ${{ inputs.name }}"
         echo "fusionid: ${{ inputs.fusionid }}"
