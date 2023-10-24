@@ -65,6 +65,10 @@ jobs:
     #   run: |
     #     ls -lah
     #     cat changelog.txt
+    - name: Bot Check
+      if: ${{ github.actor == 'github-actions[bot]' }}
+      run: |
+        echo "Run by a bot"
     - name: Send greeting
       run: |
         echo "Actor: ${{github.actor}}"
