@@ -51,20 +51,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Download Recent Successful Commit
-      uses: dawidd6/action-download-artifact@v2
-      with:
-          name: changes
-          github_token: ${{github.token}}
-          # workflow: call2.yml
-          run_id: ${{inputs.commit_source}}
-          check_artifacts: true
-          search_artifacts: true          
+    # - name: Download Recent Successful Commit
+    #   uses: dawidd6/action-download-artifact@v2
+    #   with:
+    #       name: changes
+    #       github_token: ${{github.token}}
+    #       # workflow: call2.yml
+    #       run_id: ${{inputs.commit_source}}
+    #       check_artifacts: true
+    #       search_artifacts: true          
 
-    - name: Process Last Commit Hash Info
-      run: |
-        ls -lah
-        cat changelog.txt
+    # - name: Process Last Commit Hash Info
+    #   run: |
+    #     ls -lah
+    #     cat changelog.txt
     - name: Send greeting
       run: |
         echo "Actor: ${{github.actor}}"
