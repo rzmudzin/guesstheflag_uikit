@@ -8,6 +8,11 @@ jobs:
     runs-on: [DEVOPS]
     # runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: '50'    
       - name: Run Info
         run: |
           echo "Run Id: ${{ github.run_id }}"
