@@ -15,6 +15,7 @@ jobs:
           fetch-depth: '50'    
       - name: Run Info
         run: |
+          echo "RUNNER_WORKSPACE: $RUNNER_WORKSPACE"
           echo "Run Id: ${{ github.run_id }}"
           echo "Run Number: ${{github.run_number}}"
           echo "Branch: ${{github.ref}}"
