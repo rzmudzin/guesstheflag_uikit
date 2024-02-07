@@ -3,7 +3,23 @@ on:
   #schedule:
   #  - cron: '1/3 * * * *'
   workflow_dispatch: # adding the workflow_dispatch so it can be triggered manually
-#    inputs:
+    inputs:
+      runner:
+        type: choice
+        description: Job Type
+        options:
+        - "14"        
+        - "15"      
+      appdome:
+        description: 'Apply Appdome wrapper (true or false)'
+        required: true
+        default: 'false'
+      fusionid:
+        type: choice
+        description: Fusion Set
+        options:
+        - "No MITM"
+        - "MITM"        
 #      dsap:
 #        description: 'DSAP Environment(tst1/tst2/uat1/uat2)'
 #         required: true
