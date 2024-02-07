@@ -29,6 +29,9 @@ jobs:
   setup:
     runs-on: 'ubuntu-20.04'
     steps:
+      - name: Log Configuration
+        run: |
+          echo "Job Type: x${{inputs.xcversion}}"
       - name: DSAP uat1
         if: ${{ env.dsap == 'uat1' }}
         run: |
