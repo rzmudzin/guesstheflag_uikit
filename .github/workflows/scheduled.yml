@@ -32,6 +32,17 @@ jobs:
       - name: Log Configuration
         run: |
           echo "Job Type: x${{inputs.xcversion}}"
+          echo "AppDome Enabled: ${{inputs.appdome}}"
+      - name: AppDome One
+        if: github.event.inputs.appdome != 'false'
+        run: |
+          echo "AppDome One has been enabled"
+
+      - name: AppDome Two
+        if: github.event.inputs.appdome == 'true'
+        run: |
+          echo "AppDome Two has been enabled"          
+          
       - name: DSAP uat1
         if: ${{ env.dsap == 'uat1' }}
         run: |
