@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Log Configuration
         run: |
-          echo "Job Type: x${{inputs.xcversion}}"
+          echo "Job Type: x${{inputs.runner}}"
           echo "AppDome Enabled: ${{inputs.appdome}}"
       - name: AppDome One
         if: github.event.inputs.appdome != 'false'
